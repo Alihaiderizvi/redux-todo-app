@@ -1,3 +1,5 @@
+// All Of the Actions that your app would ne performing should be mentioned in this file.
+
 export const addTodo = () => {
 	return {
 		type: "ADD_TODO",
