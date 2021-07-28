@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTodo, deleteTodo, removeTodo } from "../Redux/actions/Index";
 import "./todo.css";
 
 const Todo = () => {
 	const [inputData, setInputData] = useState("");
+	// To Get Data from redux store
+	const list = useSelector((state) => state.TodoReducer.list);
 	const dispatch = useDispatch();
 	return (
 		<>
@@ -26,8 +28,21 @@ const Todo = () => {
 						/>
 						<i
 							className='fa fa-plus add-btn'
-							onClick={() => dispatch(addTodo(inputData))}
+							onClick={() => dispatch(addTodo(inputData), setInputData(""))}
 						></i>
+					</div>
+
+					<div className='showItems'>
+						{list.map((e) => {
+							<div className='eachItem' key={e.id}>
+								<h3>{e.data}</h3>
+								<i
+									className='far fa-trash-alt add-btn'
+									title='Delete Item'
+									onClick={() => dispatch(deleteTodo(e.id))}
+								></i>
+							</div>;
+						})}
 					</div>
 				</div>
 			</div>

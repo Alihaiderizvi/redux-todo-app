@@ -4,13 +4,13 @@ const initialState = {
 	list: [],
 };
 
-const TodoReducer = (state = { initialState }, action) => {
+const TodoReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case "ADD_TODO":
 			const { id, data } = action.payload;
 			return {
 				...state,
-				data: [
+				list: [
 					...state.list,
 					{
 						id: id,
@@ -18,8 +18,11 @@ const TodoReducer = (state = { initialState }, action) => {
 					},
 				],
 			};
+
+		case "DELETE_TODO":
+
 		default:
-			break;
+			return state;
 	}
 };
 
