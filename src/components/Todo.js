@@ -33,16 +33,24 @@ const Todo = () => {
 					</div>
 
 					<div className='showItems'>
-						{list.map((e) => {
+						{list.map((e) => (
 							<div className='eachItem' key={e.id}>
 								<h3>{e.data}</h3>
-								<i
-									className='far fa-trash-alt add-btn'
-									title='Delete Item'
-									onClick={() => dispatch(deleteTodo(e.id))}
-								></i>
-							</div>;
-						})}
+								<div className='todo-btn'>
+									<i
+										className='far fa-trash-alt add-btn'
+										title='Delete Item'
+										onClick={() => dispatch(deleteTodo(e.id))}
+									></i>
+								</div>
+							</div>
+						))}
+					</div>
+
+					<div className='showItems'>
+						<button className='btn effect04' data-sm-link-text='Remove All'>
+							<span>Check List</span>
+						</button>
 					</div>
 				</div>
 			</div>
