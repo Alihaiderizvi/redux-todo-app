@@ -1,8 +1,12 @@
 // All Of the Actions that your app would ne performing should be mentioned in this file.
 
-export const addTodo = () => {
+export const addTodo = (data) => {
 	return {
 		type: "ADD_TODO",
+		payload: {
+			id: new Date().getTime.toString(),
+			data: data,
+		},
 	};
 };
 export const deleteTodo = () => {
