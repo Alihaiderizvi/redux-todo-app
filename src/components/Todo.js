@@ -13,7 +13,7 @@ const Todo = () => {
 			<div className='main-div'>
 				<div className='child-div'>
 					<figure>
-						<figcaption>Add List Items</figcaption>
+						<figcaption>Add List Items ✍️</figcaption>
 					</figure>
 
 					<div className='addItems'>
