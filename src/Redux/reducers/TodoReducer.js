@@ -27,6 +27,10 @@ const TodoReducer = (state = initialState, action) => {
 				list: newList,
 			};
 
+		case "REMOVE_TODO":
+			return {
+				list: [],
+			};
 		default:
 			return state;
 	}
